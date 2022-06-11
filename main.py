@@ -5,11 +5,20 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
+from kivy.properties import ObjectProperty
+
 # No init needed because App has constructor inherited from App from kivy.app
 
 
 # **kwargs means infinite amount of keywords
 class MyGrid(Widget):
+    name = ObjectProperty(None)
+    email = ObjectProperty(None)
+
+    def btn(self):
+        print("Name: ", self.name.text, "Email: ", self.email.text)
+        self.name.text = ""
+        self.email.text = ""
 
     # Python code for GUI
 
